@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'All of the items'" />
+<tr th:each="item : ${itemList}">
+    <td th:text="${item.id}" />
+    <td th:text="${item.name}" />
+</tr>
+</body>
+</html>
