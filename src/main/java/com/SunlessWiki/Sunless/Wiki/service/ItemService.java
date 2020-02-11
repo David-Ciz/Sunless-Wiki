@@ -1,21 +1,21 @@
 package com.SunlessWiki.Sunless.Wiki.service;
 
+import com.SunlessWiki.Sunless.Wiki.repository.ItemRepository;
 import com.SunlessWiki.Sunless.Wiki.entity.Item;
-import com.SunlessWiki.Sunless.Wiki.dao.ItemDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class ItemService {
     @Autowired
-    private ItemDAO itemDAO;
+    private ItemRepository itemRepository;
 
-    public Collection<Item> getAllItems(){
-        return this.itemDAO.getAllItems();
+    public Iterable<Item> getAllItems(){
+        return itemRepository.findAll();
     }
-    public Item getItemById(int id){
-        return this.itemDAO.getItemById(id);
+    public Optional<Item> getItemById(int id){
+        return itemRepository.findById(id);
     }
 }
