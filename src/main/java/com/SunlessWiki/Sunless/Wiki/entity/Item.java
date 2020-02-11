@@ -2,9 +2,16 @@ package com.SunlessWiki.Sunless.Wiki.entity;
 
 import lombok.Getter;
 
-@Getter
-public class Item {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Getter
+@Entity
+public class Item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String Name;
     private int buyPrice;
